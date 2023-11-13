@@ -1,0 +1,41 @@
+.winners {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    &__results {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+    &__content {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+    }
+    &__table {
+    }
+    &__pagination {
+        margin-top: 20px;
+    }
+}
+
+table {
+    margin-top: 10px;
+    background-color: $color-background;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    & tbody {
+        & tr {
+            text-align: center;
+            & th {
+                padding: 15px 10px;
+            }
+        }
+        & tr:nth-child(even) {
+            background-color: $color-table;
+        }
+        & tr:nth-child(odd) {
+            background-color: $color-hover;
+        }
+    }
+}

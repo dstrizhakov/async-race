@@ -1,0 +1,118 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &__tab {
+        align-self: flex-start;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 10;
+    }
+    &__tablinks {
+        color: $color-text;
+        background-color: inherit;
+        font-size: 18px;
+        float: left;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        min-width: 200px;
+        padding: 14px 16px;
+        transition: 0.3s;
+        &:first-child {
+            border: 1px solid $color-border;
+            border-top: none;
+            border-radius: 0 0 0 $border-radius;
+        }
+        &:last-child {
+            border: 1px solid $color-border;
+            border-left: none;
+            border-top: none;
+            border-radius: 0 0 $border-radius 0;
+        }
+        &:hover {
+            background-color: $color-hover;
+        }
+        &.active {
+            background-color: $color-active;
+        }
+    }
+    &__logo {
+        padding-right: 50px;
+        padding-left: 50px;
+    }
+    &__text {
+        position: relative;
+        & span {
+            font-size: 18px;
+            padding: 0 4px;
+            color: #fff;
+            animation: zoomup 50ms linear infinite;
+            animation-delay: calc(10ms * var(--i));
+        }
+        &::after {
+            content: '';
+            width: 300px;
+            height: 100px;
+            background: $color-border;
+            position: absolute;
+            top: -50px;
+            animation: splash 10s linear alternate-reverse infinite;
+        }
+    }
+}
+
+@keyframes zoomup {
+    0%,
+    100% {
+        color: #defefd;
+        filter: blur(5px);
+        text-shadow: 0 0 10px #00c2ba, 0 0 20px #00c2ba, 0 0 30px #00c2ba, 0 0 40px #00c2ba, 0 0 60px #00c2ba,
+            0 0 80px #00c2ba, 0 0 100px #00c2ba, 0 0 120px #00c2ba;
+    }
+
+    5%,
+    95% {
+        filter: blur(0px);
+        color: #fff;
+        text-shadow: none;
+    }
+}
+
+@keyframes splash {
+    0% {
+        left: -100px;
+        opacity: 0.1;
+        filter: blur(30px);
+    }
+    25% {
+        left: 0px;
+        opacity: 0.25;
+        filter: blur(60px);
+    }
+    50% {
+        left: 100px;
+        opacity: 0.3;
+        filter: blur(60px);
+    }
+    100% {
+        left: -100px;
+        opacity: 0.1;
+        filter: blur(30px);
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        &__tab {
+            align-self: unset;
+            margin-bottom: 20px;
+        }
+    }
+}

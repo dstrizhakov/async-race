@@ -1,0 +1,46 @@
+.footer {
+    min-height: 60px;
+    border: 1px solid $color-border;
+    box-shadow: 0px -0px 40px 0px rgba(0, 144, 255, 0.7);
+    border-bottom: none;
+    border-radius: $border-radius $border-radius 0 0;
+    z-index: 1;
+    background-color: $color-hover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 400;
+    animation: burn 10s linear alternate-reverse infinite;
+    &__link {
+        text-decoration: none;
+        color: inherit;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+
+        & img {
+            height: 30px;
+            filter: invert(1);
+        }
+        & span {
+            margin-left: 10px;
+        }
+        opacity: 0.8;
+        transition: opacity 0.3s ease 0s;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes burn {
+    0% {
+        box-shadow: 0px 0px 40px 0px rgba(0, 144, 255, 0.25);
+    }
+    50% {
+        box-shadow: 0px 0px 150px 0px rgba(0, 144, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0px 0px 40px 0px rgba(0, 144, 255, 0.25);
+    }
+}

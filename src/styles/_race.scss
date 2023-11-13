@@ -1,0 +1,123 @@
+.race {
+    margin-top: 20px;
+    background-color: $color-background;
+    color: $color-text;
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    &__options {
+    }
+
+    &__heading {
+    }
+
+    &__content {
+        flex: 1 1 auto;
+    }
+
+    &__pagination {
+    }
+    &__winner {
+        text-align: center;
+    }
+}
+.options {
+    max-width: 400px;
+    margin-bottom: 20px;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        border: 1px solid $color-border;
+        box-shadow: 0px -0px 40px 0px rgba(0, 144, 255, 0.3);
+        border-radius: $border-radius;
+        padding: 15px;
+    }
+
+    &__race {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.option {
+    &__create {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    &__input {
+        padding: 5px;
+    }
+    &__color {
+    }
+    &__random {
+        margin-bottom: 10px;
+        & label {
+            margin-right: 30px;
+        }
+    }
+
+    &__update {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}
+.button {
+    display: inline-flex;
+    padding: 10px;
+    background-color: $color-hover;
+    color: $color-text;
+    font-size: 14px;
+    text-transform: uppercase;
+    border: 1px solid $color-border;
+    border-radius: $border-radius;
+    cursor: pointer;
+    position: relative;
+    z-index: 100;
+    &:hover {
+        transition: all 0.3s ease 0;
+        background-color: $color-active;
+    }
+    &:disabled {
+        opacity: 0.5;
+    }
+    &__create {
+    }
+
+    &__update {
+    }
+
+    &__race {
+    }
+
+    &__reset {
+    }
+
+    &__generate {
+    }
+}
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    &__prev {
+    }
+
+    &__page {
+        min-width: 120px;
+        padding: 0 20px;
+        text-align: center;
+    }
+
+    &__next {
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .options {
+        align-self: center;
+    }
+}

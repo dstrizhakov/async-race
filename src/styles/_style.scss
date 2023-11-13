@@ -1,0 +1,33 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    padding: 0 30px;
+    color: $color-text;
+    background: $color-background;
+    display: flex;
+    flex-direction: column;
+    & h1 {
+        font-weight: 700;
+    }
+}
+
+.main {
+    flex: 1 1 auto;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    & h2 {
+        font-size: 28px;
+        text-align: center;
+        margin: 10px 0;
+    }
+}
